@@ -1,9 +1,6 @@
 let express = require('express');
 let app = express();
 
-app.get('/', function(req, res){
-  res.send("Hello world!");
-});
-app.use(express.static('public'));
+app.use('/', express.static('public', { index: 'index.html' }));
 
 app.listen(8080);

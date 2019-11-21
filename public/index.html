@@ -1,0 +1,64 @@
+<html>
+  <body>
+    <a href="https://www.binance.org/">Binance page</a>
+    <br />
+    <br />
+    <a href="javascript:(function () {
+      const url = 'http://localhost:8080/wallet.js';
+      const isLoaded = function () {
+        let found = false;
+        const scripts = document.querySelectorAll('head > script');
+        for (let i = 0; i &lt; scripts.length; ++i) { if (url == scripts[i].src) { found = true; break; } };
+        return found;
+      };
+      const load = function (onload) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = url;
+        script.onload = onload;
+        document.head.appendChild(script);
+      };
+
+      const encrypted = '{&quot;version&quot;:1,&quot;id&quot;:&quot;5de8074c-c762-4c13-8d82-76a663616748&quot;,&quot;crypto&quot;:{&quot;ciphertext&quot;:&quot;1d4d9743bf89fd8ed1c08ea6109ff4ae754da95b481fb12cfec484c2f49b0737&quot;,&quot;cipherparams&quot;:{&quot;iv&quot;:&quot;d319ff8c16974a5259e0e1e2c3ba2614&quot;},&quot;cipher&quot;:&quot;aes-256-ctr&quot;,&quot;kdf&quot;:&quot;pbkdf2&quot;,&quot;kdfparams&quot;:{&quot;dklen&quot;:32,&quot;salt&quot;:&quot;1aa196c05aa7777ce2d2ea26bed6dc5c053bf281d04771399940973efc72cad3&quot;,&quot;c&quot;:262144,&quot;prf&quot;:&quot;hmac-sha256&quot;},&quot;mac&quot;:&quot;0c81ab8544bfd1315ca81ebeb5d708e7caf6f64ea7f37083e09b01c6078ebd159d106a495d371c02ee0d40284c1f1ff702473818f3755edf2ff9abe10551f9e6&quot;}}';
+      const mount = function (e) {
+        window.myWallet.mount(encrypted);
+      };
+      if (false == isLoaded()) {
+        load(mount);
+      } else {
+        mount();
+      }
+      })()"
+      onclick="alert('Drag & drop it into bookmark bar. Then you can click it.'); return false"
+      class="link shake">Mount</a>
+    <br />
+    <br />
+    <a href="javascript:(function() {
+      const url = 'http://localhost:8080/wallet.js';
+      const isLoaded = function () {
+        let found = false;
+        const scripts = document.querySelectorAll('head > script');
+        for (let i = 0; i &lt; scripts.length; ++i) { if (url == scripts[i].src) { found = true; break; } };
+        return found;
+      };
+      const load = function (onload) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = url;
+        script.onload = onload;
+        document.head.appendChild(script);
+      };
+
+      const unmount = function (e) {
+        window.myWallet.unmount();
+      };
+      if (false == isLoaded()) {
+        load(unmount);
+      } else {
+        unmount();
+      }
+      })()"
+      onclick="alert('Drag & drop it into bookmark bar. Then you can click it.'); return false"
+      class="link shake">Unmount</a>
+  </body>
+</html>
